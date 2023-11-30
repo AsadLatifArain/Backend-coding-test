@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\OwnerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/get_element_count', [GeneralController::class, 'getElementCount']);
+Route::get('/get_group_by_owners', [OwnerController::class, 'getGroupByOwnerService']);
