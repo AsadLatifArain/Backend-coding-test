@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('employee_id');
             $table->unsignedBigInteger('schedule_id');
+            $table->date('date');
             $table->time('checkin_time');
             $table->time('checkout_time');
             $table->timestamps();
