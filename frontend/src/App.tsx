@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import FileUploader from './components/FileUploader'
+import ShowAttendanceList from './components/ShowAttendanceList'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <div className='container'>
         <FileUploader />
+        <ShowAttendanceList />
       </div>
       
     </>

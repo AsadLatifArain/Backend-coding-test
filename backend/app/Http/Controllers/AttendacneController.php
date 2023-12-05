@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
 use App\Imports\AttendanceImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
+use App\Services\AttendanceService;
+
 class AttendacneController extends Controller
 {
-    
+  
+  protected $attendanceService;
+
+  public function __construct(AttendanceService $attendanceService)
+  {
+    $this->attendanceService = $attendanceService;
+  }
+
   public function uploadExcelFile(Request $request)
   {
 
@@ -38,5 +47,32 @@ class AttendacneController extends Controller
         'errors' => [],
       ];
       return $response;
+  }
+
+
+  public function getAttendance()
+  {
+    $attendance = $this->attendanceService->getAttendance();
+
+    if($attendance)
+    {
+      $response = [
+        'status' => true,
+        'message' => '',
+        'data' => $attendance,
+        'errors' => [],
+      ];
+    }
+    else
+    {
+      $response = [
+        'status' => false,
+        'message' => '',
+        'data' => [],
+        'errors' => [],
+      ];
+    }
+
+    return $response;
   }
 }

@@ -20,4 +20,9 @@ class Employee extends Model
     {
         return $this->hasOne(Schedule::class);
     }
+
+    public function Attendance()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }

@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/store', [AttendacneController::class, 'uploadExcelFile']);
+Route::get('/get_attendance', [AttendacneController::class, 'getAttendance']);
 

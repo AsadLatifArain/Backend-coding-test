@@ -25,4 +25,9 @@ class Schedule extends Model
     {
         return $this->belongsTo(Location::class);
     }
+
+    public function Attendance()
+    {
+        return $this->hasOne(Attendacne::class);
+    }
 }
